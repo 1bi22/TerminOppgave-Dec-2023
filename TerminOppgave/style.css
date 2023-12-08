@@ -1,0 +1,161 @@
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html body{
+    height: 100%;
+}
+
+#homepage, h2{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#moleBody{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color:rgb(58, 129, 0);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    cursor: none;
+    text-align: center;
+}
+#moleHeader{
+    display: flex;
+    gap: 60vh;
+}
+.homeButton{
+    height: 8vh;
+    width: 8vh;
+    margin-top: 1vh;
+}
+#moleform{
+    display: flex;
+    justify-content: center;
+}
+#moleScore{
+    display: flex;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2em;
+    justify-content: center;
+}
+#moleStart{
+    height: 10vh;
+    width: 17vh;
+    background-color: red;
+    border: solid black 2px;
+    margin-top: 1vh;
+}
+#moleInnpakning{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+#countdown{
+    display: flex;
+    font-size: 2em;
+    color: white;
+    width: 20%;
+    align-items: center;
+}
+#board{
+    height: 450px;
+    width: 550px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+
+}
+.hole{
+    background-color: rgb(165, 85, 11);
+    border-radius: 50%;
+    box-shadow: inset 0 10px 0 7px rgb(53, 21, 6),
+                inset 0 20px 20px 15px rgba(0, 0, 0, .3),
+                0 0 5px rgba(0, 0, 0, .5);
+    position: relative;
+    overflow: hidden;
+}
+.hole .mole{
+    width: 60%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    animation: rise .3s ease-out;
+}
+
+@keyframes rise {
+    0%{
+        transform: translateX(-50%) translateY(100%); 
+    }
+    100%{
+        transform: translateX(-50%) translateY(0%); 
+    }
+}
+
+.filler{
+    width: 20%;
+}
+.cursor{
+    height: 20vh;
+    width: 20vh;
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-image: url(Images/hammer.png);
+    background-size: 100% 100%;
+    transform: translate(-20%, -20%);
+    transition: transform .1s;
+    pointer-events: none;
+}
+.cursor.active{
+    transform: translate(-20%, -20%) rotate(-45deg);
+}
+#birdBody{
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    cursor: none;
+}
+#flappyScore{
+    display: none;
+}
+#birdBoard{
+    border: solid 3px black;
+    background-image: url(Images/flappybirdbg.png);
+}
+
+#leadboardBody{
+    background-color: darkblue;
+}
+.leaderboards{
+    display: flex;
+    align-items: normal;
+    text-align: center;
+    justify-content: space-evenly;
+    gap: 6vh;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+
+
+}
+.leaderboardTable td, th{
+    padding: 5px;
+    border: 2px solid black;
+    background-color: cornflowerblue;
+    color: white;
+}
